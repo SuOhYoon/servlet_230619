@@ -58,21 +58,26 @@
 	};
 	list.add(map);
 %>
-	<div class="container">
-		<%
-			String id = request.getParameter("id");
-			/* for(Map<String, Object> item:list){
-				if(id.equals(item.get("id"))){ */
-		%>
-		<h1 class="text-center">책 목록</h1>
-		<img src=<%= map.get("image") %>>
-		<h1><%= map.get("title") %></h1>
-		<h2><%= map.get("author") %></h2>
-		<h3><%= map.get("publisher") %></h3>
-		<%
-				/* }
-			} */
-		%>
+<%
+	// 테이블에 보여줄 책 정보(target) 뽑아내기
+	int id = Integer.parseInt(request.getParameter("id"));
+	
+	Map<String, Object> target = new HashMap<>();
+	for(Map<String, Object> item:list){
+		if(id == (int)item.get("id")){
+		   target = item;
+		   break;
+		}
+	}
+	// out.print(target);
+%>
+	<div class="container d-flex">
+		<div><img src="<%= target.get("image") %>" alt="표지 이미지" width="300"></div>
+		<div>
+			<div class="display-1 font-weight-bold"><%= target.get("title") %></div>
+			<div class="display-2 text-info"><%= target.get("author") %></div>
+			<div class="display-4 text-secondary"><%= target.get("publisher") %></div>
+		</div>
 	</div>
 </body>
 </html>
