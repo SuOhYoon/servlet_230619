@@ -13,13 +13,14 @@
 <body>
 	<div class="container">
 		<h1>메뉴 검색</h1>
-		<form method="post" action="/lesson02/quiz07_1.jsp">
-			<div class="d-flex">
-				<input type="text" class="form-control col-3 mr-3" name="keyword">
-				<input type="checkbox" class="mr-1" name="starFilter"><label class="mt-2">4점 이하 제외</label>
-			</div>
-			<button type="submit" class="btn btn-success mt-3">검색</button>
-		</form>
+		<div class="input-group m-5 mt-5">
+			<form method="post" action="/lesson02/quiz07_1.jsp">
+				<div class="input-group mb-3">
+                    <input type="text" class="form-control" aria-describedby="button-addon2" placeholder="검색어를 입력해주세요.">
+                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2" >검색</button>
+                </div>
+			</form>
+		</div>
 	</div>
 </body>
 </html>

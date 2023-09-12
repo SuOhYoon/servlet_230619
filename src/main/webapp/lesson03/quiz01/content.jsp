@@ -1,7 +1,7 @@
 <%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
+	<%
     List<Map<String, String>> list = new ArrayList<>();
     Map<String, String> map = new HashMap<String, String>() {{ put("ch", "5"); put("name", "SBS"); put("category", "지상파"); } };
     list.add(map);
@@ -51,8 +51,10 @@
 	<tbody>
 		<%
 		String category = request.getParameter("category");
+
 		for (Map<String, String> item : list) {
-			if(item.get("name").equals(category)){
+			// 카테고리가 null일 때(전체) 또는 카테고리와 일치할 때
+			if (category == null || category.equals(item.get("category"))) {
 		%>
 		<tr>
 			<td><%=item.get("ch")%></td>
@@ -60,8 +62,8 @@
 			<td><%=item.get("category")%></td>
 		</tr>
 	</tbody>
-		<%
+	<%
 			}
 		}
-		%>
+	%>
 </table>
