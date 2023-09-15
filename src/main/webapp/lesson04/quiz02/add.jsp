@@ -12,14 +12,18 @@
 </head>
 <body>
 	<div class="container">
+		<h1>즐겨찾기 추가</h1>
 		<form method="post" action="/lesson04/add">
-			<h1>즐겨찾기 추가</h1>
-			<b>사이트명</b>
-			<input type="text" class="form-control col-3" name="name">
-			<b>사이트 주소: </b>
-			<input type="text" class="form-control col-5" name="url">
-			<br>
-			<button type="submit" class="btn btn-success">추가</button>
+			<div class="form-group">
+				<label for="name">사이트명:</label>
+				<input type="text" class="form-control col-4" name="name">
+			</div>
+			<div class="form-group">
+				<label for="url">사이트 주소	:</label>
+				<input type="text" class="form-control col-5" name="url">
+				<br>
+				<button type="submit" class="btn btn-success">추가</button>
+			</div>
 		</form>
 	</div>
 </body>

@@ -23,7 +23,7 @@
 	ResultSet res = ms.select(query);
 %>
 	<div class="container">
-		<table class="table">
+		<table class="table text-center">
 			<thead>
 				<tr>
 					<th>사이트</th>
